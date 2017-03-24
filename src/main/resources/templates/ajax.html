@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Log Aggregator</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link rel="stylesheet" type="text/css"
+	href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+	
+<link rel="stylesheet" type="text/css"
+	href="bootstrap/css/bootstrap-table.css"/>	
+	
+<style>
+body { padding-bottom: 30px; }
+/*     .table {
+        max-width: none;
+        table-layout: fixed;
+        word-wrap: break-word;
+    } */
+</style>
+
+</head>
+<body>
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" id="logo">Log Aggregator</a>
+			</div>
+			<form class="navbar-form navbar-left" id="search-form">
+				<div class="form-group">
+					<input type="text" class="form-control" id="searchString"
+						style="min-width: 500px" placeholder="Enter Text" />
+				</div>
+				<div class="form-group">
+					<input type="date" class="form-control" id="date"
+						placeholder="Pick Date" />
+				</div>
+				<div class="form-group">
+					<button type="submit" id="bth-search" style="min-width: 200px"
+						class="btn btn-primary">Search</button>
+				</div>
+			</form>
+		</div>
+	</nav>
+	
+	<div class="container" id="homeImage">
+		<img class="img-responsive"
+			src="images/Log_Aggreagtor_Architecture.jpg" />
+	</div>
+
+	<div class="container">
+			<div id="error" style="display: none"></div>
+			<div id="logTable" style="display: none">
+				<!-- <table class="display table table-bordered" data-show-export="true" data-url='#' id="clienti"> -->
+				<table class="table table-striped table-bordered table-hover"
+					id="clienti" data-url='#' data-search="true"
+					data-show-refresh="false" data-show-toggle="false"
+					data-show-pagination-switch="true" data-sort-order="asc"
+					data-show-export="true" data-pagination="true">
+					<thead>
+						<tr>
+						<th data-field="releaseDate" class="text-nowrap" data-sortable="true">Date</th>
+							<th data-field="lineOftext" class="text-wrap">Logs</th>							
+						</tr>
+					</thead>
+				</table>
+			</div>
+	</div>
+
+		<nav class="navbar navbar-inverse navbar-fixed-bottom"
+		role="navigation">
+		<div class="pull-right" style="padding:8px">
+        <img src="images/Syntel_Logo.png" class="img-responsive" width="100" /></div>
+	</nav>
+
+
+	<script type="text/javascript" src="bootstrap/js/jquery.min.js"></script>
+	<script type="text/javascript"
+		src="bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript"
+		src="bootstrap/js/bootstrap-table.min.js"></script>
+	<script type="text/javascript"
+		src="bootstrap/js/bootstrap-table-export.js"></script>	
+			<script type="text/javascript"
+		src="bootstrap/js/tableExport.js"></script>	
+		<script type="text/javascript" src="bootstrap/js/tableExport.min.js"></script>	
+</body>
+</html>
