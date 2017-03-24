@@ -1,0 +1,27 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE")
+        classpath("org.springframework:springloaded:1.2.6.RELEASE")
+    }
+}
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+jar {
+    baseName = 'log-aggregator-web'
+    version =  '0.1.0'
+}
+repositories {
+    mavenCentral()
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+dependencies {
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version:'1.5.1.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version:'1.5.1.RELEASE'
+    compile group: 'org.webjars', name: 'bootstrap', version:'3.3.7'
+}
